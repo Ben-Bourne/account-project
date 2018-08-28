@@ -11,7 +11,8 @@ public class AccountServicesTest {
         manager.addAccount("Tony", "Tiger");
         manager.addAccount("Tony", "Tony");
         manager.addAccount("Peter", "Glover");
+        manager.addAccount("Tony", "Tudor");
         int result = manager.countInstances("Tony");
-        assertEquals(3, result);
+        assertEquals(4, result);
     }
 }

@@ -1,9 +1,19 @@
-public class Accounts {
-    private String firstName;
-    private String lastName;
-    private int accountNumber;
+import javax.persistence.*;
 
-    public Accounts(String firstName, String lastName, int accountNumber){
+@Entity
+public class Accounts {
+    @Id @GeneratedValue (strategy= GenerationType.AUTO)
+    private long id;
+    @Column (name = "first_name")
+    private String firstName;
+    @Column (name = "last_name")
+    private String lastName;
+    @Column (name = "account_number")
+    private String accountNumber;
+
+    public Accounts(){}
+
+    public Accounts(String firstName, String lastName, String accountNumber){
         this.firstName = firstName;
         this.lastName = lastName;
         this.accountNumber = accountNumber;
