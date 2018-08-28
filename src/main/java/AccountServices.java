@@ -14,7 +14,7 @@ public class AccountServices {
     }
 
     public void addAccount(String firstName, String lastName){
-        Accounts newAccount = new Accounts(firstName, lastName, counter);
+        Accounts newAccount = new Accounts(firstName, lastName, Integer.toString(counter));
         hmap.put(counter, newAccount);
         ++counter;
     }
@@ -30,7 +30,7 @@ public class AccountServices {
 
     public int countInstances(String name){
         int instances = 0;
-        for (int i = 1; i < hmap.size(); ++i){
+        for (int i = 1; i <= hmap.size(); ++i){
             String firstName = hmap.get(i).getFirstName();
             if (firstName.equals(name)){
                 ++instances;
